@@ -9,18 +9,35 @@
 // E così via...
 // Per fare questo bonus potremmo aver bisogno di del metodo string.includes()
 
+// const lampEl = document.getElementById('lamp');
+// const buttunEl = document.querySelector('.btn');
+	
+// function onOff(){
+	
+//    lampEl.src = 'assets/img/yellow_lamp.png';
+	
+// }
+	
+// buttunEl.addEventListener('click', onOff);
+
+// console.log(lampEl, buttunEl);
 
 const lampEl = document.getElementById('lamp');
-const buttunEl = document.querySelector('.btn');
-	
+const buttonEl = document.querySelector('.btn');
+
 function onOff(){
-	
-   lampEl.src = 'assets/img/yellow_lamp.png';
-	
+        
+    if (lampEl.src.includes('yellow')) {
+        lampEl.src = 'assets/img/white_lamp.png';
+        buttonEl.innerHTML = 'Spegni'
+    } else if (lampEl.src.includes('white')) {
+        lampEl.src = 'assets/img/yellow_lamp.png';
+        buttonEl.innerHTML = 'Accendi'
+    }
+
 }
-	
-buttunEl.addEventListener('click', onOff);
 
-console.log(lampEl, buttunEl);
+buttonEl.addEventListener('click', onOff);
 
 
+// console.log(lampElSrc)
