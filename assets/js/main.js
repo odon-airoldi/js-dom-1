@@ -9,6 +9,24 @@
 // E così via...
 // Per fare questo bonus potremmo aver bisogno di del metodo string.includes()
 
+const lampEl = document.getElementById('lamp');
+const buttonEl = document.querySelector('.btn');
+
+function toggleLamp(){
+        
+    if (lampEl.src.includes('white')) {
+        lampEl.src = 'assets/img/yellow_lamp.png';
+        buttonEl.innerHTML = 'Spegni'
+    } else if (lampEl.src.includes('yellow')) {
+        lampEl.src = 'assets/img/white_lamp.png';
+        buttonEl.innerHTML = 'Accendi'
+    }
+
+}
+
+buttonEl.addEventListener('click', toggleLamp);
+
+
 // const lampEl = document.getElementById('lamp');
 // const buttunEl = document.querySelector('.btn');
 	
@@ -21,23 +39,3 @@
 // buttunEl.addEventListener('click', onOff);
 
 // console.log(lampEl, buttunEl);
-
-const lampEl = document.getElementById('lamp');
-const buttonEl = document.querySelector('.btn');
-
-function onOff(){
-        
-    if (lampEl.src.includes('yellow')) {
-        lampEl.src = 'assets/img/white_lamp.png';
-        buttonEl.innerHTML = 'Spegni'
-    } else if (lampEl.src.includes('white')) {
-        lampEl.src = 'assets/img/yellow_lamp.png';
-        buttonEl.innerHTML = 'Accendi'
-    }
-
-}
-
-buttonEl.addEventListener('click', onOff);
-
-
-// console.log(lampElSrc)
